@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+*{
+    margin: 0;
+}
+body{
+    background: linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+    font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+    text-align: -webkit-center;
+    margin-top: 25vh;
+    height: 75vh;
+}
+
+.for{
+    background-color: #f0f7f766;
+    padding: 56px 30px 30px;
+    border-radius: 10px;
+}
+
+section{
+    width: 350px;
+    margin: 0 auto;
+}
+
+.icon-user{
+    font-size: 50px;
+    position: absolute;
+    background-color: #2a5ea57a;
+    width: 78px;
+    height: 70px;
+    padding-top: 8px;
+    border-radius: 50%;
+    margin-top: -100px;
+    margin-left: -38px;
+    color: white;
+}
+
+.imput1{
+    height: 30px;
+    border: none;
+    padding: 0px 10px;
+    background-image: url(../img/user.png);
+    background-repeat: no-repeat;
+    width: 57%;
+    border-radius: 5px;
+    margin-top: 25px;
+    padding-left: 30px;
+    padding-right: 20px;
+}
+
+.imput2{
+    height: 30px;
+    border: none;
+    padding: 0px 10px;
+    background-image: url(../img/sobre.png);
+    background-repeat: no-repeat;
+    width: 57%;
+    border-radius: 5px;
+    margin-top: 25px;
+    padding-left: 30px;
+    padding-right: 20px;
+}
+
+button{
+    width: 75%;
+    color: white;
+    background: #4886ec;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    transition: 0.2s;
+}
+
+button:hover{
+    box-shadow: 4px 4px 7px #504f4fad;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.check-tex{
+    font-size: 0.8rem;
+}
+
+hr{
+    margin: 32px 0 14px;
+}
+
+/* REGISTER*/
+
+.body-r{
+    background: linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+    font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+    text-align: -webkit-center;
+    margin-top: 17vh;
+    height: 83vh;
+}
+
+.imput3{
+    height: 30px;
+    border: none;
+    padding: 0px 10px;
+    background-image: url(../img/lock.png);
+    background-repeat: no-repeat;
+    width: 57%;
+    border-radius: 5px;
+    margin-top: 25px;
+    padding-left: 30px;
+    padding-right: 20px;
+}
+
+.imput4{
+    height: 30px;
+    border: none;
+    padding: 0px 10px;
+    background-image: url(../img/lock.png);
+    background-repeat: no-repeat;
+    width: 57%;
+    border-radius: 5px;
+    margin-top: 25px;
+    padding-left: 30px;
+    padding-right: 20px;
+}
+
+input:required:valid, .contact_form textarea:required:valid { 
+    background: #fff url(../img/ckeck-ok.png) no-repeat 98% center;
+    box-shadow: 0 0 5px #5cd053;
+    border-color: #28921f;
+    transition: 1s;
+}
+
+/* COMIENZO CHECBOX*/
+
+/*
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label span {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	margin: -1px 4px 0 0;
+	vertical-align: middle;
+	background: url(../img/radio-uncheck.png);
+	background-size: cover;
+	cursor: pointer;
+}
+
+  */ 
+
+
+/*input:valid{
+    background-color: #4886ec;
+}*/
+/*input[type="radio"]:checked + label span {
+	background: url(../img/radio-check.png);
+	background-size: cover;
+}*/
+/* FIN CHECBOX*/
+

@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Source+Sans+Pro&display=swap');
+
+*{
+    margin: 0;
+}
+
+body{
+    font-family: 'Source Sans Pro',Helvetica,Arial,sans-serif;
+}
+
+/*--COMINZO NAV SUPERIOR----------------------------------*/
+header{
+    background-color: #75a2ec;
+    height: 7vh;
+}
+
+nav{
+    display: flex;
+}
+nav ul{
+    display: flex;
+    list-style:none; 
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 9px 25px;
+}
+
+nav ul li{
+    padding: 5px 10px;
+}
+
+nav ul li span{
+    margin-left: 10px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: rgb(243, 241, 241);
+}
+/*--FIN NAV SUPERIOR----------------------------------*/
+
+/*--COMINZO LOGO/NOMBRE EMPRESA----------------------------------*/
+.logo{
+    padding: 8px 25px;
+    text-decoration: none;
+    width: 16.4%;
+    text-align: center;
+    background-color: #75a2ec;
+    color: white;
+}
+/*--FIN LOGO/NOMBRE EMPRESA----------------------------------*/
+
+/*--COMINZO DASHBOAR----------------------------------*/
+main{
+    display: flex;
+}
+
+/*--COMINZO NAV IZQUIERDO----------------------------------*/
+.sidebar{
+    background-color: #323233;
+    width: 20%;
+}
+
+.sidebar ul{
+    padding-left: 0;
+}
+
+.sidebar ul li{
+    list-style:none;
+    padding-bottom: 25px;
+    margin-left: 19%;
+}
+
+.sidebar ul li a{
+    color: #c7c5c5;
+    text-decoration: none;
+}
+
+.sidebar ul li a span{
+    margin-left: 10px;
+}
+
+.header-sidebar {
+    color: #cac7c4;
+    margin-bottom: 40px;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #444848;
+    padding: 7px 0px;
+}
+/*--FIN NAV IZQUIERDO----------------------------------*/
+
+/*--COMIENZO CUSTOM CALENDAR GENERAL----------------------------------*/
+.calendar{
+    background-color: #ecf0f5;
+    width: 100%;
+    display: flex;
+}
+
+/*--CUSTOM CALENDAR----------------------------------*/
+.box-calendar{
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    margin: 10px;
+    width: 80%;
+}
+
+h2{
+    font-weight: normal;
+    font-family: 'Nanum Gothic', sans-serif;
+    text-transform: capitalize;
+}
+
+.fc {
+    padding-top: 15px;
+}
+/*--FIN CUSTOM CALENDAR----------------------------------*/
+
+/*--COMIENZO CUSTOM AGREGAR EVENTOS----------------------------------*/
+.box{
+    border-radius: 3px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    margin: 10px;
+}
+
+.box-header{
+    border-bottom: 1px solid #f4f4f4;
+    margin-bottom: 11px;
+}
+
+.box-tols{
+    width: 26%;
+}
+
+h3{
+    font-family: 'Nanum Gothic', sans-serif;
+    padding-bottom: 10px;
+    font-weight: normal;
+}
+
+.checkbox{
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.check{
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.input-group{
+    display: flex;
+    height: 2rem;
+    
+}
+
+.form-control{
+    width: 71%;
+    border: #cdd2d2 1px solid;
+    padding-left: 0.3rem;
+}
+
+.btn{
+    height: 2rem; 
+    border: none;
+    background: #3c8dbc;
+    color: white;
+    transition: 0.3s;
+}
+
+.fc-toolbar.fc-header-toolbar {
+    padding: 0 10px;
+}
+
+.external-event {
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    border-radius: 3px;
+    cursor: move;
+}
+
+.external-event:hover {
+    box-shadow: inset 0 0 90px rgba(0,0,0,0.2);
+}
+
+.box.box-solid {
+    border-top: 0;
+    padding: 1rem;
+}
+
+.btn-group{
+    width: 100%; 
+    margin-bottom: 10px;
+}
+
+.fc-color-picker {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.fc-color-picker>li {
+    float: left;
+    font-size: 30px;
+    margin-right: 5px;
+    line-height: 30px;
+}
+
+.bg-green{
+    background-color:#00a65a;
+    color: #fff
+}
+.bg-yellow{
+    background-color:#f39c12;
+    color: #fff
+}
+.bg-aqua{
+    background-color:#00c0ef;
+    color: #fff
+}
+.bg-light-blue{
+    background-color:#3c8dbc;
+    color: #fff
+}
+.bg-red{
+    background-color:#dd4b39;
+    color: #fff
+}
+
+.text-aqua {
+    color: #00c0ef !important;
+}
+.text-blue {
+    color: #0073b7 !important;
+}
+.text-light-blue {
+    color: #3c8dbc !important;
+}
+.text-teal {
+    color: #39cccc !important;
+}
+.text-yellow {
+    color: #f39c12 !important;
+}
+.text-orange {
+    color: #ff851b !important;
+}
+.text-green {
+    color: #00a65a !important;
+}
+.text-lime {
+    color: #01ff70 !important;
+}
+.text-red {
+    color: #dd4b39 !important;
+}
+.text-purple {
+    color: #605ca8 !important;
+}
+.text-fuchsia {
+    color: #f012be !important;
+}
+.text-muted {
+    color: #777;
+}
+.text-navy {
+    color: #001f3f !important;
+}
+.fc-unthemed td.fc-today {
+    background: #c8e6ea94 !important; /* Color fondo dia actual: eliminar si no afecta solo el color*/
+}
+/*--FIN CUSTOM AGREGAR EVENTOS----------------------------------*/
+/*--FIN CUSTOM CALENDAR GENERAL----------------------------------*/
+/*--FIN DASHBOAR----------------------------------*/
