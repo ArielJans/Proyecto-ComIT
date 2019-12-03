@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AgendAr Register</title>
+    <link rel="stylesheet" href="./css/style-login.css">
+    <script src="https://kit.fontawesome.com/414006261c.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="body-r">
+    <section>
+        <article class="for">
+            
+            <!--////////////////// FORMUALRIO //////////////////-->
+            <form action="/usuarios" method="POST" enctype="multipart/form-data">
+                <i class="fas fa-user-md icon-user"></i>
+                <h3>AgendAr</h3>
+                <h2>Registro</h2>
+
+                <!-- USABA PARA VALIDACION JS.
+                        <input type="radio" checked>
+                        <label for="passBiss"><span class="indicador"></span>
+                        -->
+                <label for="user"></label>
+                <input class="imput1" minlength="6" maxlength="20" type="text" id="user" placeholder="Nombre de usuario"
+                    value="" oninput="validar(event)" name="user" required>
+
+                <label for="email"></label>
+                <input class="imput2" type="email" id="email" placeholder="Email" value="" oninput="validar(event)"
+                    name="email" required>
+
+                <label for="pass"></label>
+                <input class="imput3" minlength="6" maxlength="12" type="password" id="pass" placeholder="Contraseña"
+                    value="" oninput="validar(event)" name="pass" required>
+
+                <label for="repass"></label>
+                <input class="imput4" minlength="6" maxlength="12" type="password" id="repass"
+                    placeholder="Repetir Contraseña" value="" oninput="validar(event)" name="repass" required>
+
+                <button type="submit">Registrarme</button>
+                <div class="check-tex">
+                    <input type="checkbox" name="checkbox" value="ma">Acepto <a href="#">Terminos y condiciones</a>
+                </div>
+            </form>
+            <!--////////////////// FIN FORMUALRIO //////////////////-->
+
+        </article>
+        <article>
+            <hr>
+            <p>¿Ya estas registrado? <a href="login.html">Iniciar sesión</a> </p>
+        </article>
+    </section>
+
+    <!-- custom js general -->
+    <!--<script src="./js/script.js"></script>-->
+</body>
+
+</html>
