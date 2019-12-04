@@ -37,79 +37,81 @@ $(function () {
         m = date.getMonth(),
         y = date.getFullYear()
 
-    $('#calendar').fullCalendar({
-        header: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'month,agendaWeek,agendaDay'
+    $("#calendar").fullCalendar({
+      header: {
+        left: "prev,next today",
+        center: "title",
+        right: "month,agendaWeek,agendaDay"
+      },
+      buttonText: {
+        today: "Hoy",
+        month: "Mes",
+        week: "Semana",
+        day: "Día"
+      },
+
+      //Random default events
+      events: [
+        {
+          title: "Fernando garay: Turno por dolor de espalda y mareos",
+          description: 'first description',
+          start: new Date(y, m, 6),
+          backgroundColor: "#f56954", //red
+          borderColor: "#f56954" //red
         },
-        buttonText: {
-            today: 'Hoy',
-            month: 'Mes',
-            week: 'Semana',
-            day: 'Día'
+        {
+          title: "Ramirez Juan: Dolor en garganta y fiebre",
+          start: new Date(y, m, d - 5),
+          end: new Date(y, m, d - 5),
+          backgroundColor: "#f39c12", //yellow
+          borderColor: "#f39c12" //yellow
         },
-
-        //Random default events
-        events: [
-            {
-                title: 'All Day Event',
-                start: new Date(y, m, 1),
-                backgroundColor: '#f56954', //red
-                borderColor: '#f56954' //red
-            },
-            {
-                title: 'Long Event',
-                start: new Date(y, m, d - 5),
-                end: new Date(y, m, d - 2),
-                backgroundColor: '#f39c12', //yellow
-                borderColor: '#f39c12' //yellow
-            },
-            {
-                title: 'Birthday Party',
-                start: new Date(y, m, d + 1, 19, 0),
-                end: new Date(y, m, d + 1, 22, 30),
-                allDay: false,
-                backgroundColor: '#00a65a', //Success (green)
-                borderColor: '#00a65a' //Success (green)
-            },
-            {
-                title: 'Click for Google',
-                start: new Date(y, m, 28),
-                end: new Date(y, m, 29),
-                url: 'http://google.com/',
-                backgroundColor: '#3c8dbc', //Primary (light-blue)
-                borderColor: '#3c8dbc' //Primary (light-blue)
-            }
-        ],
-        editable: true,
-        droppable: true, // this allows things to be dropped onto the calendar !!!
-        drop: function (date, allDay) { // this function is called when something is dropped
-
-            // recupera el objeto de evento almacenado del elemento descartado
-            var originalEventObject = $(this).data('eventObject')
-
-            // necesitamos copiarlo, para que varios eventos no tengan una referencia al mismo objeto
-            var copiedEventObject = $.extend({}, originalEventObject)
-
-            // asignarle la fecha que se informó
-            copiedEventObject.start = date
-            copiedEventObject.allDay = allDay
-            copiedEventObject.backgroundColor = $(this).css('background-color')
-            copiedEventObject.borderColor = $(this).css('border-color')
-
-            // representa el evento en el calendario
-            // el último argumento `true` determina si el evento "se queda" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
-            $('#calendar').fullCalendar('renderEvent', copiedEventObject, true)
-
-            // is the "remove after drop" checkbox checked?
-            if ($('#drop-remove').is(':checked')) {
-                // if so, remove the element from the "Draggable Events" list
-                $(this).remove()
-            }
-
+        {
+          title: "Ojeda Lucia: apto medico",
+          start: new Date(y, m, d + 1, 19, 0),
+          end: new Date(y, m, d + 1, 22, 30),
+          allDay: false,
+          backgroundColor: "#00a65a", //Success (green)
+          borderColor: "#00a65a" //Success (green)
+        },
+        {
+          title: "Figuero Laura: dolor de oido y cuello",
+          start: new Date(y, m, 28),
+          end: new Date(y, m, 29),
+          url: "http://google.com/",
+          backgroundColor: "#3c8dbc", //Primary (light-blue)
+          borderColor: "#3c8dbc" //Primary (light-blue)
         }
-    })
+      ],
+      
+      editable: true,
+      droppable: true, // this allows things to be dropped onto the calendar !!! //esto permite que las cosas se dejen caer en el calendario!!
+      drop: function(date, allDay) {
+        // this function is called when something is dropped
+
+        // recupera el objeto de evento almacenado del elemento descartado
+        var originalEventObject = $(this).data("eventObject");
+
+        // necesitamos copiarlo, para que varios eventos no tengan una referencia al mismo objeto
+        var copiedEventObject = $.extend({}, originalEventObject);
+
+        // asignarle la fecha que se informó
+        copiedEventObject.start = date;
+        copiedEventObject.allDay = allDay;
+        copiedEventObject.backgroundColor = $(this).css("background-color");
+        copiedEventObject.borderColor = $(this).css("border-color");
+
+        // representa el evento en el calendario
+        // el último argumento `true` determina si el evento "se queda" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+        $("#calendar").fullCalendar("renderEvent", copiedEventObject, true);
+
+        // is the "remove after drop" checkbox checked?
+        if ($("#drop-remove").is(":checked")) {
+          // if so, remove the element from the "Draggable Events" list
+          $(this).remove();
+        }
+      }
+    });
 
     /* ADDING EVENTS */ /// * AGREGAR EVENTOS * /
     var currColor = '#3c8dbc' //Red by default
