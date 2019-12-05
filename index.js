@@ -23,7 +23,7 @@ app.post('/api/usuarios', function(req, res) {
     email: req.body.email,
     pass: req.body.pass
   })
-  res.status(201).json({mensaje: 'Usuario registrado exitosamente'}) /// opcion: ...(201).redirect('/graciaszaraza.html')
+  res.status(201).redirect('/login.html')
 })
 
 app.listen(puerto, function() {
@@ -33,10 +33,3 @@ app.listen(puerto, function() {
 /////// Borrar usuario ////////
 
 /////// Actualizar usuario //////
-
-//////////// Mongodb ///////////
-///var ClienteMongo = require('mongodb').MongoClient;
-
-///var url = 
-
-///ClienteMongo.conect()
