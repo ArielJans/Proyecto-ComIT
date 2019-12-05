@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser')
 
-var app = express()
+var app = express() /// var servidor = express()
 var puerto = process.env.PORT || 3000
 
 var bd_usuarios = []
@@ -33,3 +33,10 @@ app.listen(puerto, function() {
 /////// Borrar usuario ////////
 
 /////// Actualizar usuario //////
+
+//////////// Mongodb ///////////
+///var ClienteMongo = require('mongodb').MongoClient;
+
+///var url = 
+
+///ClienteMongo.conect()
