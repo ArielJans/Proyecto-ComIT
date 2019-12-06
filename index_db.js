@@ -3,7 +3,7 @@
 var MongoClient = require("mongodb").MongoClient;
 
 // Connection URL
-var url = 'mongodb+srv://arieljans:26781Jans@cluster0-b8qob.mongodb.net/test?retryWrites=true&w=majority';
+var url = 'mongodb+srv://arieljans:agermanj@cluster0-b8qob.mongodb.net/test?retryWrites=true&w=majority';
 
 // Database Name
 var dbName = "agendar";
