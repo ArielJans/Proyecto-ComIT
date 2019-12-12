@@ -19,24 +19,17 @@
                 <i class="fas fa-user-md icon-user"></i>
                 <h3>AgendAr</h3>
                 <h2>Registro</h2>
-                <!-- USABA PARA VALIDACION JS.
-                        <input type="radio" checked>
-                        <label for="passBiss"><span class="indicador"></span>
-                        -->
                 <label for="user"></label>
-                <input class="imput1" minlength="6" maxlength="20" type="text" name="user" id="user" placeholder="Nombre de usuario"
-                 oninput="validar(event)" required> <!--Elimine en todos los imput value="" /// era para la validacion si mal no recuerdo -->
+                <input class="imput1" minlength="6" maxlength="20" type="text" name="user" id="user" value="" placeholder="Nombre de usuario" oninput="validar(event)" required> 
 
                 <label for="email"></label>
-                <input class="imput2" type="email" name="email" id="email" placeholder="Email" oninput="validar(event)" required>
+                <input class="imput2" type="email" name="email" id="email" value="" placeholder="Email" oninput="validar(event)" required>
 
                 <label for="pass"></label>
-                <input class="imput3" minlength="6" maxlength="12" type="password" name="pass" id="pass" placeholder="Contraseña"
-                 oninput="validar(event)" required>
+                <input class="imput3" minlength="6" maxlength="12" type="password" name="pass" id="pass" value="" placeholder="Contraseña" oninput="validar(event)" required>
 
                 <label for="repass"></label>
-                <input class="imput4" minlength="6" maxlength="12" type="password" name="repass" id="repass"
-                    placeholder="Repetir Contraseña" oninput="validar(event)" required>
+                <input class="imput4" minlength="6" maxlength="12" type="password" name="repass" id="repass" value="" placeholder="Repetir Contraseña" oninput="validar(event)" required>
 
                 <button type="submit">Registrarme</button>
                 <div class="check-tex">
@@ -52,8 +45,8 @@
         </article>
     </section>
 
-    <!-- custom js general -->
-    <!--<script src="./js/script.js"></script>-->
+    <!-- referencia a mi js -->
+    <script src="/index_db.js"></script>
 </body>
 
 </html>

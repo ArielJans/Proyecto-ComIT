@@ -7,7 +7,7 @@ $(function () {
     function init_events(ele) {
         ele.each(function () {
 
-            // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+            // create an Event Object (https://fullcalendar.io/docs/v3/event-object)
             // it doesn't need to have a start or end
             var eventObject = {
                 title: $.trim($(this).text()) // use the element's text as the event title
@@ -50,21 +50,23 @@ $(function () {
         day: "Día"
       },
 
-      //Random default events
+      //Random default events ///  OBJETO PARA GUARDAR INFO SOBRE EL EVENTO
       events: [
         {
-          title: "Fernando garay: Turno por dolor de espalda y mareos",
-          description: 'first description',
-          start: new Date(y, m, 6),
-          backgroundColor: "#f56954", //red
-          borderColor: "#f56954" //red
-        },
-        {
-          title: "Ramirez Juan: Dolor en garganta y fiebre",
-          start: new Date(y, m, d - 5),
-          end: new Date(y, m, d - 5),
+          id: 01, // agregue yo para identificar
+          title: "(MEJOR) Ramirez Juan: Dolor en garganta y fiebre",
+          description: 'first description', // Agrege yo para descripcion pero no se visualiza
+          start: new Date(2019, m, 12, 12, 0),
+          end: new Date(2019, m, 12, 13, 30),
           backgroundColor: "#f39c12", //yellow
           borderColor: "#f39c12" //yellow
+        },
+        {
+          title: "Fernando garay: Turno por dolor de espalda y mareos",
+          description: 'first description', // Agrege yo para descripcion pero no se visualiza
+          start: new Date(y, m, 3),
+          backgroundColor: "#f56954", //red
+          borderColor: "#f56954" //red
         },
         {
           title: "Ojeda Lucia: apto medico",
@@ -86,10 +88,11 @@ $(function () {
       
       editable: true,
       droppable: true, // this allows things to be dropped onto the calendar !!! //esto permite que las cosas se dejen caer en el calendario!!
+      
       drop: function(date, allDay) {
-        // this function is called when something is dropped
+        // this function is called when something is dropped // esta función se llama cuando se cae algo
 
-        // recupera el objeto de evento almacenado del elemento descartado
+        // recupera el objeto de evento almacenado del elemento descartado/soltado
         var originalEventObject = $(this).data("eventObject");
 
         // necesitamos copiarlo, para que varios eventos no tengan una referencia al mismo objeto
@@ -166,8 +169,8 @@ $(function () {
                 window.open(info.event.url);
             }
         }
+        
     });
     ///////////////////////////////////////////////////////////////////////////////
 
 })
-

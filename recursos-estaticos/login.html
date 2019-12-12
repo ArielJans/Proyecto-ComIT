@@ -13,12 +13,14 @@
 <body>
     <section>
         <article class="for">
-            <form action="http://localhost:3000/agendar" method="POST">
+            <form action="/api/usuarios" method="POST">
                 <i class="fas fa-user-md icon-user"></i>
                 <h3>AgendAr</h3>
                 <h2>Iniciar sesión</h2>
-                    <p><input class="imput1" type="text" id="user" placeholder="Nombre de usuario" value="" name="user"></p>
-                    <p><input class="imput3" type="password" id="pass" placeholder="Contraseña" name="pass"></p>
+                    <label for="email"></label>
+                    <input class="imput1" type="email" id="email" name ="email" placeholder="Email" value="">
+                    <label for="pass"></label>
+                    <input class="imput3" type="password" id="pass" name="pass" placeholder="Contraseña" value="" >
                 <button type="submit">Entrar</button>
                 <div class="check-tex">
                     <input type="checkbox" name="iluminacion" value="ma">Recordarme
@@ -31,7 +33,6 @@
             <p>¿Todavia no estas registrado? <a href="register.html"> Registrarme</a> </p>
         </article>
     </section>
-
 </body>
 
 </html>
