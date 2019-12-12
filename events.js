@@ -19,21 +19,23 @@ MongoClient.connect(url, async function (err, client) {
         console.log("Conexión exitosa");
         db = client.db(dbName);
 
+        //////////REALIZADO PARA PROBAR LA CONEXIOAN A LA BD: FUNCIONA BIEN/////////////////////////////////
+
         //////// AGREGAR EVENTO ///////
-        //await db.collection('eventos').insertOne({ nombre: 'Juan Ramon' }) // ELIMINAR
-        //console.log("Se agrego un evento")  // ELIMINAR
+        //await db.collection('eventos').insertOne({ nombre: 'Juan Ramon' }) 
+        //console.log("Se agrego un evento")  
 
         //////// MOSTRAR TODOS LOS EVENTOS ///////
-        //var registro = await db.collection('eventos').find().toArray()// ELIMINAR
-        //console.log(JSON.stringify(registro)) // ELIMINAR
+        //var registro = await db.collection('eventos').find().toArray()
+        //console.log(JSON.stringify(registro)) 
 
         //////// ELIMINAR EVENTO ///////
-        //await db.collection('eventos').deleteOne({ nombre: 'Juan Ramon' }) // ELIMINAR
-        //console.log("Se elimino un evento")  // ELIMINAR
+        //await db.collection('eventos').deleteOne({ nombre: 'Juan Ramon' }) 
+        //console.log("Se elimino un evento")  
 
         //////// MOSTRAR TODOS LOS EVENTOS ///////
-        //var registro = await db.collection('eventos').find().toArray()// ELIMINAR
-        //console.log(JSON.stringify(registro)) // ELIMINAR
+        //var registro = await db.collection('eventos').find().toArray()
+        //console.log(JSON.stringify(registro)) 
     }
 })
 
@@ -57,7 +59,10 @@ app.post('/api/eventos', async function (req, res) {
     res.status(201).send('Registro exitoso')
 })
 
-/////// Leer listado de eventos //////// ACA TENDRIA QUE TOMAR Y MOSTRAR TODOS LOS EVENTOS EN EL CALENDARIO 
+////// ACA TENDRIA QUE TOMAR Y MOSTRAR TODOS LOS EVENTOS EN EL CALENDARIO///////
+///////// LOS LEE BIEN PERO TENGO QUE VER COMO MOSTRARLO EN LA FECHA CORRESPONDIENTE A CADA EVENTO/////////////
+
+/////// Leer listado de eventos ////////
 app.get('/api/eventos', async function (_, res) {
     var registro = await db.collection('eventos').find().toArray()
     res.json(registro)
@@ -66,7 +71,6 @@ app.get('/api/eventos', async function (_, res) {
 app.listen(puerto, function () {
     console.log('Servidor escuchando conexion en puerto ' + puerto)
 })
-
 
 
 ////////////////////ECHO POR FER PARA SELECCIONAR CUALQUIER COSA DEL DOM ///////////////////////// 
@@ -87,7 +91,6 @@ var getData = function () {
     var borderColor = document.getElementById("borderColor").value;
 }
 
-/////// Por ahi es util: https://fullcalendar.io/docs/v3/event-source-object#options
 
 ///// Recupera eventos que FullCalendar tiene en la memoria. https://fullcalendar.io/docs/v3/clientEvents
 
@@ -96,6 +99,8 @@ var getData = function () {
 //// UTIL POR LEER BIEN: https://stackoverflow.com/questions/57154298/fullcalendar-js-get-selected-days
 
 /// https://fullcalendar.io/docs/v3/eventReceive
+
+/////// Por ahi es util: https://fullcalendar.io/docs/v3/event-source-object#options
 
 /// https://fullcalendar.io/docs/v3/drop 
 
