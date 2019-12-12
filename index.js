@@ -27,12 +27,6 @@ app.use(bodyParser.json()) /// *
 
 app.use(express.static('./recursos-estaticos'))
 
-/////// Leer listado de usuarios ////////
-app.get('/api/usuarios', async function(_, res) {
-  var usuarios = await db.collection('usuarios').find().toArray()
-  res.json(usuarios)
-})
-
 ////////// Agregar usuarios ////////////
 app.post('/api/usuarios', async function (req, res) {
   await db.collection('usuarios').insertOne({
@@ -41,6 +35,12 @@ app.post('/api/usuarios', async function (req, res) {
     pass: req.body.pass
   })
   res.status(201).redirect('/login.html')
+})
+
+/////// Leer listado de usuarios ////////
+app.get('/api/usuarios', async function(_, res) {
+  var usuarios = await db.collection('usuarios').find().toArray()
+  res.json(usuarios)
 })
 
 ////////// Login usario existente ////////////

@@ -31,11 +31,14 @@ $(function () {
 
     /* initialize the calendar
      -----------------------------------------------------------------*/
-    //Date for the calendar events (dummy data)
+    //Date for the calendar events (dummy data) /// Fecha de los eventos del calendario(datos ficticios)
     var date = new Date()
     var d = date.getDate(),
         m = date.getMonth(),
         y = date.getFullYear()
+
+
+    /////// ACA LLAMA A FULLCALENDAR PARA EMPEZAR A AGREGAR LOS EVENTOS ///////////
 
     $("#calendar").fullCalendar({
       header: {

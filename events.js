@@ -19,6 +19,21 @@ MongoClient.connect(url, async function (err, client) {
         console.log("Conexión exitosa");
         db = client.db(dbName);
 
+        //////// AGREGAR EVENTO ///////
+        //await db.collection('eventos').insertOne({ nombre: 'Juan Ramon' }) // ELIMINAR
+        //console.log("Se agrego un evento")  // ELIMINAR
+
+        //////// MOSTRAR TODOS LOS EVENTOS ///////
+        //var registro = await db.collection('eventos').find().toArray()// ELIMINAR
+        //console.log(JSON.stringify(registro)) // ELIMINAR
+
+        //////// ELIMINAR EVENTO ///////
+        //await db.collection('eventos').deleteOne({ nombre: 'Juan Ramon' }) // ELIMINAR
+        //console.log("Se elimino un evento")  // ELIMINAR
+
+        //////// MOSTRAR TODOS LOS EVENTOS ///////
+        //var registro = await db.collection('eventos').find().toArray()// ELIMINAR
+        //console.log(JSON.stringify(registro)) // ELIMINAR
     }
 })
 
@@ -27,24 +42,25 @@ app.use(bodyParser.json()) /// *
 
 app.use(express.static('./recursos-estaticos'))
 
-/////// Leer listado de eventos //////// ACA TENDRIA QUE TOMAR Y MOSTRAR TODOS LOS EVENTOS EN EL CALENDARIO 
-app.get('/api/eventos', async function (_, res) {
-    var registro = await db.collection('eventos').find().toArray()
-    res.json(registro)
-})
 
 ////////// Agregar evento //////////// ACA INTENTO TOMAR LOS DATOS DE UN EVENTO Y HACER UN POST A LA BD
 app.post('/api/eventos', async function (req, res) {
     await db.collection('eventos').insertOne({
-        id: req.body.id,
-        title: req.body.title,
-        description: req.body.description,
-        start: req.body.start,
-        end: req.body.end,
-        backgroundColor: req.body.backgroundColor,
-        borderColor: req.body.borderColor
+    id: req.body.id,
+    title: req.body.title,
+    description: req.body.description,
+    start: req.body.start,
+    end: req.body.end,
+    backgroundColor: req.body.backgroundColor,
+    borderColor: req.body.borderColor
     })
     res.status(201).send('Registro exitoso')
+})
+
+/////// Leer listado de eventos //////// ACA TENDRIA QUE TOMAR Y MOSTRAR TODOS LOS EVENTOS EN EL CALENDARIO 
+app.get('/api/eventos', async function (_, res) {
+    var registro = await db.collection('eventos').find().toArray()
+    res.json(registro)
 })
 
 app.listen(puerto, function () {
@@ -53,7 +69,7 @@ app.listen(puerto, function () {
 
 
 
-////////////////////  FER  ///////////////////////// 
+////////////////////ECHO POR FER PARA SELECCIONAR CUALQUIER COSA DEL DOM ///////////////////////// 
 
 //document.body.addEventListener("click", function (elemento) {
    // alert(elemento.target)
@@ -83,8 +99,8 @@ var getData = function () {
 
 /// https://fullcalendar.io/docs/v3/drop 
 
+/// buena info de dayclick, eventclick, events, etc: https://ics-software-engineering.github.io/meteor-example-fullcalendar/
+
+/// ottro mas https://blog.thira.com.au/post/93184225152/a-mongodb-backend-for-fullcalendar-in-10-minutes
 
 //// util para otra forma de guardar https://fullcalendar.io/docs/v3/dayClick
-
-
-
