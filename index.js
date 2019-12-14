@@ -20,7 +20,7 @@ MongoClient.connect(url, async function (err, client) {
     db = client.db(dbName);
     
   }
-}) 
+})
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json()) /// *
@@ -35,6 +35,15 @@ app.post('/api/usuarios', async function (req, res) {
     pass: req.body.pass
   })
   res.status(201).redirect('/login.html')
+})
+
+//////// ENVIO DE EVENTO NUEVO A DB ////////
+app.post('/api/eventos', async function (req, res) {
+  await db.collection('eventos').insertOne({
+    titulo:eq.body.titulo,
+    fecha: req.body.fecha
+  })
+  res.status(201).send('evento cerado correctamente')
 })
 
 /////// Borrar todos los usuarios ////////

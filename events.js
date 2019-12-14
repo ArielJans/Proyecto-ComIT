@@ -46,27 +46,15 @@ app.use(express.static('./recursos-estaticos'))
 
 
 ////////// Agregar evento //////////// ACA INTENTO TOMAR LOS DATOS DE UN EVENTO Y HACER UN POST A LA BD
-/// class="fc-body" || id="calendar" para "escuchar" solo cuando se suelta en el calendario
 
 /// OPCION: var evento = document.getElementById("calendar")
-/*
-var evento = document.getElementsByClassName("fc-body")
-evento.addEventListener('onmouseup', function () {   
-
     app.post('/api/eventos', async function (req, res) {
-        await db.collection('eventos').insertOne({
-            title: req.body.title,
-            description: req.body.description,
-            start: req.body.start,
-            end: req.body.end,
-            backgroundColor: req.body.backgroundColor,
-            borderColor: req.body.borderColor
-        })
-        res.status(201).send('Registro exitoso')
+        console.log(post)
+        //await db.collection('eventos').insertOne({
+        //})
+        //res.status(201).send('Registro exitoso')
     })
 
-})
-*/
 
 ////// ACA TENDRIA QUE TOMAR Y MOSTRAR TODOS LOS EVENTOS EN EL CALENDARIO///////
 ///////// LOS LEE BIEN PERO TENGO QUE VER COMO MOSTRARLO EN LA FECHA CORRESPONDIENTE A CADA EVENTO///////////
@@ -81,6 +69,9 @@ app.listen(puerto, function () {
     console.log('Servidor escuchando conexion en puerto ' + puerto)
 })
 
+document.body.addEventListener("click", function (elemento) {
+    alert(elemento.target)
+});
 /*
 ////////////////////ECHO POR FER PARA SELECCIONAR CUALQUIER COSA DEL DOM ///////////////////////// 
 

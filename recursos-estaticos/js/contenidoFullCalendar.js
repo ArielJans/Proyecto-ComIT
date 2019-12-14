@@ -53,6 +53,22 @@ $(function () {
         day: "Día"
       },
 
+      /*
+      dayClick: function (date, jsEvent, view) {
+        //alert("Estoy escuchando bien")
+        alert(date.format())
+        //alert('Coordenadas: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+        //alert('Current view: ' + view.title);
+        $(this).css('background-color', 'red');
+      },
+      */
+
+      function(date, jsEvent, ui, resourceId) {
+        alert(ui)
+       },
+
+      /// investigat eventClick (muestra el contenido del evento)
+
       //Random default events ///  OBJETO PARA GUARDAR INFO SOBRE EL EVENTO
       events: [
         {
@@ -92,12 +108,29 @@ $(function () {
       editable: true,
       droppable: true, // this allows things to be dropped onto the calendar !!! //esto permite que las cosas se dejen caer en el calendario!!
       
-      drop: function(date, allDay) {
+      drop: function (date, allDay, jsEvent, ui) { 
         // this function is called when something is dropped // esta función se llama cuando se cae algo
+         // MOI BORRAR alert(ui)
 
+        var titulo = jsEvent.helper[0].textContent
+
+        var fecha = date._d.getTime()
+
+        fetch('/api/eventos', {
+          method: 'POST',
+          headers:{
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(
+            {titulo:titulo,
+              fecha: fecha}
+          )
+        })
+
+        // alert(ui)
         // recupera el objeto de evento almacenado del elemento descartado/soltado
         var originalEventObject = $(this).data("eventObject");
-
+        
         // necesitamos copiarlo, para que varios eventos no tengan una referencia al mismo objeto
         var copiedEventObject = $.extend({}, originalEventObject);
 
@@ -174,6 +207,7 @@ $(function () {
         }
         
     });
+    
     ///////////////////////////////////////////////////////////////////////////////
 
 })

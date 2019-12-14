@@ -114,14 +114,15 @@
 
     <!--/////////////POST LUEGO DE SOLTAR EL EVENTO EN EL CALENDARIO///////////////////-->
     <script>
-        var fetch = require(' node-fetch ');
+       // var fetch = require(' node-fetch ');
         
         var evento = document.getElementsByClassName("fc-body") /// getElementsById("calendar")
         evento.addEventListener('onmouseup', function () {
 
             var url = 'http://localhost:3000/api/eventos'
+            debugger
 
-            async function postEvent() {
+            /*async function postEvent() { 
                 var datos = JSON.stringify({ 
                     title: req.body.title,
                     start: req.body.start,
@@ -138,7 +139,7 @@
                 })
                 var contenido = await respuesta.text()
                 alert(contenido)
-            }
+            }*/
         })
     </script>
     <!--/////////////FIN POST LUEGO DE SOLTAR EL EVENTO EN EL CALENDARIO///////////////////-->
@@ -163,10 +164,19 @@
     //        var turno = document.getElementById('div');
     //        document.body.removeChild(turno);
     //    }
+    
+        // dragend : El evento ocurre cuando el usuario ha terminado de arrastrar un elemento
+        // drop: El evento ocurre cuando el elemento arrastrado se suelta en el destino de colocación
+
+        // EVENTOS HTML: https://www.w3schools.com/jsref/dom_obj_event.asp
 
        //var turno = document.getElementsByTagName() Encuentra elementos por nombre de etiqueta
        //var turno = document.getElementsByClassName() Encuentra elementos por nombre de clase
 
+       /* calendar.addEventListener("click", function (elemento) {
+                alert(elemento.target)
+            }); */
+            
     </script>
     <!-- fin custom calendar -->
 </body>
