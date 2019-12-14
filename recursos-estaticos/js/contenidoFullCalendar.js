@@ -56,9 +56,9 @@ $(function () {
       //Random default events ///  OBJETO PARA GUARDAR INFO SOBRE EL EVENTO
       events: [
         {
-          id: 01, // agregue yo para identificar
+          //id: 01, // agregue yo para identificar
           title: "(MEJOR) Ramirez Juan: Dolor en garganta y fiebre",
-          description: 'first description', // Agrege yo para descripcion pero no se visualiza
+          //description: 'first description', // Agrege yo para descripcion pero no se visualiza
           start: new Date(2019, m, 12, 12, 0),
           end: new Date(2019, m, 12, 13, 30),
           backgroundColor: "#f39c12", //yellow

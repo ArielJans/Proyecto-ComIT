@@ -18,7 +18,7 @@ MongoClient.connect(url, async function (err, client) {
   } else {
     console.log("Conexión exitosa");
     db = client.db(dbName);
-
+    
   }
 }) 
 
@@ -29,7 +29,7 @@ app.use(express.static('./recursos-estaticos'))
 
 ////////// Agregar usuarios ////////////
 app.post('/api/usuarios', async function (req, res) {
-  await db.collection('usuarios').insertOne({
+  await db.collection('personas').insertOne({
     user: req.body.user,
     email: req.body.email,
     pass: req.body.pass
@@ -37,17 +37,23 @@ app.post('/api/usuarios', async function (req, res) {
   res.status(201).redirect('/login.html')
 })
 
+/////// Borrar todos los usuarios ////////
+//app.post('/api/usuarios', async function () {
+//await db.collection('/usuarios').deleteMany()
+//})
+
 /////// Leer listado de usuarios ////////
 app.get('/api/usuarios', async function(_, res) {
-  var usuarios = await db.collection('usuarios').find().toArray()
+  var usuarios = await db.collection('personas').find().toArray()
   res.json(usuarios)
 })
 
+
 ////////// Login usario existente ////////////
-app.post('/api/usuarios', async function (req, res) {
-   var usuario = await db.collection('usuarios').findOne({
+app.post('/api/login', async function (req, res) {
+   var usuario = await db.collection('personas').findOne({
      email: req.body.email,
-     pass: req.body.pass
+     pass: req.body.pass 
   })
   if (!usuario) {
     res.status(401).send('login Incorrecto')
@@ -55,7 +61,6 @@ app.post('/api/usuarios', async function (req, res) {
     res.status(201).redirect('/index.html')
   }
 })
-
 
 app.listen(puerto, function () {
   console.log('Servidor escuchando conexion en puerto ' + puerto)

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var evento = document.getElementsByClassName("fc-body")
+        evento.addEventListener('onmouseup', function () {
+
+            app.post('/api/eventos', async function (req, res) {
+                await db.collection('eventos').insertOne({
+                    title: req.body.title,
+                    start: req.body.start,
+                    end: req.body.end,
+                    backgroundColor: req.body.backgroundColor,
+                    borderColor: req.body.borderColor
+                })
+                res.status(201).send('Registro de evento exitoso') /// cuando funcione, elimino este send.
+            })
+
+        })
+    </script>
+    <!--///////////////////////////////////////////////-->
+
+    <!--////////////////////// FETCH /////////////////////////-->
+    <script>
+
+        var evento = document.getElementsByClassName("fc-body")
+            evento.addEventListener('onmouseup', function () {
+
+        var url = 'mongodb+srv://arieljans:agermanj@cluster0-b8qob.mongodb.net/test?retryWrites=true&w=majority'
+
+        async function postEvent() {
+            var respuesta = await fetch(url, {
+                method: 'POST',
+                headers: {
+                title: req.body.title,
+                start: req.body.start,
+                end: req.body.end,
+                backgroundColor: req.body.backgroundColor,
+                borderColor: req.body.borderColor
+                }
+            })
+            var contenido = await respuesta.text()
+            alert(contenido)
+        }
+        })
+    </script>
+
+
+</body>
+</html>

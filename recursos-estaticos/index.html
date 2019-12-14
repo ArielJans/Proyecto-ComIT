@@ -112,6 +112,37 @@
         </section>
     </main>
 
+    <!--/////////////POST LUEGO DE SOLTAR EL EVENTO EN EL CALENDARIO///////////////////-->
+    <script>
+        var fetch = require(' node-fetch ');
+        
+        var evento = document.getElementsByClassName("fc-body") /// getElementsById("calendar")
+        evento.addEventListener('onmouseup', function () {
+
+            var url = 'http://localhost:3000/api/eventos'
+
+            async function postEvent() {
+                var datos = JSON.stringify({ 
+                    title: req.body.title,
+                    start: req.body.start,
+                    end: req.body.end,
+                    backgroundColor: req.body.backgroundColor,
+                    borderColor: req.body.borderColor
+                 })
+                var respuesta = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                     body: datos
+                })
+                var contenido = await respuesta.text()
+                alert(contenido)
+            }
+        })
+    </script>
+    <!--/////////////FIN POST LUEGO DE SOLTAR EL EVENTO EN EL CALENDARIO///////////////////-->
+
     <!-- jQuery 3 -->
     <script src="./plugins/jquery/dist/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
@@ -123,7 +154,7 @@
     <!-- archivo js general fullCalendar -->
     <script src="./js/contenidoFullCalendar.js"></script>
     <!-- custom js general -->
-    <script src="./js/script.js"></script>
+    <script src="/events.js"></script>
 
     <!--mi custom calendar -->
     <script>
@@ -138,7 +169,6 @@
 
     </script>
     <!-- fin custom calendar -->
-
 </body>
 
 </html>
