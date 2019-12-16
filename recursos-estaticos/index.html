@@ -1,3 +1,4 @@
+<!-- CREADO POR JANS ARIEL -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,179 +7,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AgendAr</title>
-    <!-- style -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- fullCalendar -->
-    <link rel="stylesheet" href="./plugins/fullcalendar/dist/fullcalendar.min.css">
-    <link rel="stylesheet" href="./plugins/fullcalendar/dist/fullcalendar.print.min.css" media="print">
-    <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/414006261c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Righteous|Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/414006261c.js"></script>
+    <link rel="stylesheet" href="css/style-index.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="./index.html" class="logo">
-                <h1>AGENDAR</h1>
-            </a>
-            <ul>
-                <li>
-                    <a href="#" class="far fa-bell"></a>
-                </li>
+    <section class="img-background" alt="Imagen AgendAr">
+        <header class="banners">
+            <nav class="nav">
+                <a href="mailto:arjapro@gmail.com" class="nav-item">CONTACTO</a>
+                <a href="register.html" class="nav-item">REGISTRARME</a>
+                <a href="login.html" class="nav-item">INICIAR SESIÓN</a>
+                <a href="#"><img src="./img/agendar.png" class="img-guest" alt="Logo Agendar"></a>
+                <a class="brand" href="#">AgendAr</a>
+            </nav>
+        </header>
+    </section>
 
-                <li>
-                    <a href="login.html" class="fas fa-user-cog"><span>Usuario</span></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="sidebar">
-            <ul>
-                <h2 class="header-sidebar">NAVEGACIÓN PRINCIPAL</h2>
-                <li><a href="#"><i class="fas fa-user-md"></i><span>Perfil</span></a></li>
-                <li><a href="#"><i class="fas fa-calendar-alt"></i><span>Calendario</span></a></li>
-                <li><a href="#"><i class="fas fa-tasks"></i></i><span>Tareas</span></a></li>
-            </ul>
-        </section>
+    <!-- SECCION CALL ACTION -->
+    <!--<img src="img/img1.jpg" class="img-background" alt="Imagen AgendAr">
+    <section class="sec-call">
+        <h1 class="tex-callActio">Tu vida organizada</h1>
+        <input type="submit" value="Facebook" class="btn-footer">
+    </section> -->
+    <!--FIN SECCION CALL ACTION -->
 
-        <section class="calendar">
-
-            <article class="box-tols">
-                <div class="box box-solid">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Eventos arrastrables</h3>
+    <!--FOOTER -->
+    <footer class="footer-section">
+        <div class="container-footer">
+            <div class="col-1">
+                <h2 class="brand2"><img src="./img/agendar.png" class="footer-img" alt="Logo Guest"> AgendAr</h2>
+                <p class="item-footer2"> Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> | Todos los derechos reservados</p>
+                <ul class="ftco-footer-social">
+                    <p class="item-footer2">Compartir en:</p>
+                    <li class="ftco-animate"><a href="#" target="_blank"><span
+                                class="fab fa-whatsapp-square icon-social"></span></a></li>
+                    <li class="ftco-animate"><a href="#" target="_blank"><span
+                                class="fab fa-facebook-square icon-social"></i></span></a></li>
+                    <li class="ftco-animate"><a href="#" target="_blank"><span
+                                class="fab fa-twitter-square icon-social"></span></a></li>
+                </ul>
+            </div>
+            <div class="col-2">
+                <h2 class="footer-titulos">Servicios</h2>
+                <ul class="list-unstyled">
+                    <li><a href="login.html" class="item-footer2">Iniciar Sesión</a></li>
+                    <li><a href="register.html" class="item-footer2">Registrarse</a></li>
+                    <li><a href="mailto:arjapro@gmail.com" class="item-footer2">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <h2 class="footer-titulos">Síguenos en Facebook</h2>
+                <form action="https://www.facebook.com/" class="subscribe-form" target="_blank">
+                    <div class="form-group">
+                        <input type="submit" value="Facebook" class="btn-footer">
                     </div>
-                    <div class="box-body">
-                        <!-- the events -->
-                        <div id="external-events">
-                            <div class="external-event bg-green">Turno 1</div>
-                            <div class="external-event bg-yellow">Turno 2</div>
-                            <div class="external-event bg-aqua">Turno 3</div>
-                            <div class="external-event bg-light-blue">Reunion</div>
-                            <div class="external-event bg-red">Reunion 2</div>
-                            <div class="checkbox">
-                                <label for="drop-remove">
-                                    <input type="checkbox" id="drop-remove" class="check"> eliminar después de soltar
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.box-body -->
-                </div>
-
-                <div class="box box-solid">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Crear Evento</h3>
-                    </div>
-                    <div class="box-body">
-                        <div class="btn-group">
-                            <!--<button type="button" id="color-chooser-btn" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown">Color <span class="caret"></span></button>-->
-                            <ul class="fc-color-picker" id="color-chooser">
-                                <li><a class="text-aqua" href="#"><i class="fa fa-square"></i></a></li>
-                                <li><a class="text-blue" href="#"><i class="fa fa-square"></i></a></li>
-                                <li><a class="text-light-blue" href="#"><i class="fa fa-square"></i></a></li>
-                                <li><a class="text-teal" href="#"><i class="fa fa-square"></i></a></li>
-                                <li><a class="text-yellow" href="#"><i class="fa fa-square"></i></a></li>
-                                <li><a class="text-orange" href="#"><i class="fa fa-square"></i></a></li>
-                                <li><a class="text-green" href="#"><i class="fa fa-square"></i></a></li>
-                                <li><a class="text-lime" href="#"><i class="fa fa-square"></i></a></li>
-                                <li><a class="text-red" href="#"><i class="fa fa-square"></i></a></li>
-                                <li><a class="text-purple" href="#"><i class="fa fa-square"></i></a></li>
-                                <li><a class="text-fuchsia" href="#"><i class="fa fa-square"></i></a></li>
-                                <li><a class="text-muted" href="#"><i class="fa fa-square"></i></a></li>
-                                <li><a class="text-navy" href="#"><i class="fa fa-square"></i></a></li>
-                            </ul>
-                        </div>
-                        <!-- /btn-group -->
-                        <div class="input-group">
-                            <input id="new-event" type="text" class="form-control" placeholder="Título del Evento">
-
-                            <div class="input-group-btn">
-                                <button id="add-new-event" type="button" class="btn">Añadir</button>
-                            </div>
-                            <!-- /btn-group -->
-                        </div>
-                        <!-- /input-group -->
-                    </div>
-                </div>
-
-            </article>
-
-            <article class="box-calendar">
-                <!-- THE CALENDAR -->
-                <div id="calendar"></div>
-            </article>
-        </section>
-    </main>
-
-    <!--/////////////POST LUEGO DE SOLTAR EL EVENTO EN EL CALENDARIO///////////////////-->
-    <script>
-       // var fetch = require(' node-fetch ');
-        
-        var evento = document.getElementsByClassName("fc-body") /// getElementsById("calendar")
-        evento.addEventListener('onmouseup', function () {
-
-            var url = 'http://localhost:3000/api/eventos'
-            debugger
-
-            /*async function postEvent() { 
-                var datos = JSON.stringify({ 
-                    title: req.body.title,
-                    start: req.body.start,
-                    end: req.body.end,
-                    backgroundColor: req.body.backgroundColor,
-                    borderColor: req.body.borderColor
-                 })
-                var respuesta = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                     body: datos
-                })
-                var contenido = await respuesta.text()
-                alert(contenido)
-            }*/
-        })
-    </script>
-    <!--/////////////FIN POST LUEGO DE SOLTAR EL EVENTO EN EL CALENDARIO///////////////////-->
-
-    <!-- jQuery 3 -->
-    <script src="./plugins/jquery/dist/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="./plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- fullCalendar -->
-    <script src="./plugins/moment/moment.js"></script>
-    <script src="./plugins/fullcalendar/dist/fullcalendar.min.js"></script>
-    <script src="./plugins/fullcalendar/dist/locale/es.js"></script>
-    <!-- archivo js general fullCalendar -->
-    <script src="./js/contenidoFullCalendar.js"></script>
-    <!-- custom js general -->
-    <script src="/events.js"></script>
-
-    <!--mi custom calendar -->
-    <script>
-
-    //function eliminar() {
-    //        var turno = document.getElementById('div');
-    //        document.body.removeChild(turno);
-    //    }
-    
-        // dragend : El evento ocurre cuando el usuario ha terminado de arrastrar un elemento
-        // drop: El evento ocurre cuando el elemento arrastrado se suelta en el destino de colocación
-
-        // EVENTOS HTML: https://www.w3schools.com/jsref/dom_obj_event.asp
-
-       //var turno = document.getElementsByTagName() Encuentra elementos por nombre de etiqueta
-       //var turno = document.getElementsByClassName() Encuentra elementos por nombre de clase
-
-       /* calendar.addEventListener("click", function (elemento) {
-                alert(elemento.target)
-            }); */
-            
-    </script>
-    <!-- fin custom calendar -->
+                </form>
+            </div>
+        </div>
+    </footer>
+    <!--FIN FOOTER -->
 </body>
 
 </html>

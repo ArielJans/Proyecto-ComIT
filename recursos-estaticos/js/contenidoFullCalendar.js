@@ -63,13 +63,14 @@ $(function () {
       },
       */
 
-      function(date, jsEvent, ui, resourceId) {
-        alert(ui)
-       },
+      // function(date, jsEvent, ui, resourceId) {
+      //   alert(ui)
+      //  },
 
       /// investigat eventClick (muestra el contenido del evento)
 
       //Random default events ///  OBJETO PARA GUARDAR INFO SOBRE EL EVENTO
+      
       events: [
         {
           //id: 01, // agregue yo para identificar
@@ -112,8 +113,8 @@ $(function () {
         // this function is called when something is dropped // esta función se llama cuando se cae algo
          // MOI BORRAR alert(ui)
 
+         //////////////// CAPTURA DE EVENTOS /////////////////////
         var titulo = jsEvent.helper[0].textContent
-
         var fecha = date._d.getTime()
 
         fetch('/api/eventos', {
@@ -126,6 +127,7 @@ $(function () {
               fecha: fecha}
           )
         })
+        //////////////// FIN CAPTURA DE EVENTOS /////////////////////
 
         // alert(ui)
         // recupera el objeto de evento almacenado del elemento descartado/soltado

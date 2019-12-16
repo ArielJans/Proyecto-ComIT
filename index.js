@@ -40,10 +40,16 @@ app.post('/api/usuarios', async function (req, res) {
 //////// ENVIO DE EVENTO NUEVO A DB ////////
 app.post('/api/eventos', async function (req, res) {
   await db.collection('eventos').insertOne({
-    titulo:eq.body.titulo,
-    fecha: req.body.fecha
+    titulo:req.body.titulo,
+    fecha:req.body.fecha
   })
   res.status(201).send('evento cerado correctamente')
+})
+
+/////// PEDIDOS DE EVENTOS A BD ////////
+app.get('/api/eventos', async function (_, res) {
+  var event = await db.collection('eventos').find().toArray()
+  res.json(event)
 })
 
 /////// Borrar todos los usuarios ////////
@@ -67,7 +73,7 @@ app.post('/api/login', async function (req, res) {
   if (!usuario) {
     res.status(401).send('login Incorrecto')
   }else{
-    res.status(201).redirect('/index.html')
+    res.status(201).redirect('/dashboard.html')
   }
 })
 

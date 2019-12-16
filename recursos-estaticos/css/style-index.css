@@ -1,0 +1,165 @@
+/* 1_ navegador con secciones, logo y nombre de emprea*/
+/* 2_ imagen de fondo en cabecera*/
+/* 3_ call-action*/
+/* 4_ Footer*/
+/* CREADO POR JANS ARIEL */
+
+
+body{
+    margin: 0px;
+}
+
+/* 1_ navegador con secciones, logo y nombre de emprea*/
+.nav{
+    width: 98%;
+    position: fixed;
+    height: 55px;
+    padding: 0 15px;
+    background-color:rgba(225, 239, 239, 0.77);
+    z-index: 1;
+}
+
+.nav-item{
+    font-family: 'Roboto', sans-serif;
+    color: #2f2d2d;
+    font-size: 15px;
+    float: right;
+    text-decoration: none;
+    margin: 19px 16px ;
+}
+
+.nav-item:hover {
+    color: #26687ef0;
+}
+
+.img-guest{
+    height: 34px;
+    float: left;
+    margin: 9px 15px 0px 15px;
+}
+
+.brand{
+    color: #75a2ec;
+    font-size: 2.5em;
+    font-family: 'Righteous', cursive;
+    margin: 0;
+    text-decoration: none; 
+}
+
+/* FIN 1 */
+
+/* 2_ imagen de fondo en cabecera*/
+.img-background{
+    max-width: 100%;
+    height: 650px;
+    background: url(../img/img1.jpg) no-repeat fixed center center;
+}
+/* FIN 2*/ 
+
+/* 3_ Call Action */
+.sec-call{
+    position: absolute;
+}
+.tex-callActio{
+    color: #fff;
+    margin: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+}
+/* FIN 3 */
+
+/* 4_Footer*/
+
+.footer-section{
+    background: #0088B2;
+    margin: 0;
+    padding: 0px 35px;
+}
+
+.container-footer{
+   display: inline-flex;
+   width: 100%;
+}
+
+.col-1{
+    width: 35%;
+}
+
+.col-2{
+    margin-left: 10%;
+}
+
+.col-3{
+   margin-left: 26%;
+}
+
+.ftco-footer-social{
+    padding: 0;
+}
+
+.ftco-animate{
+    padding: 0 20px 0px 0;
+    display: inline;
+    font-size: 40px;
+}
+
+.icon-social{
+    color: #2f3238f0;
+}
+
+.footer-titulos{
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #fff;
+    display: grid;
+    padding: 35px 0px 0px;
+}
+
+.brand2{
+    display: flex;
+    align-items: center;
+    color: #c8cacc;
+    font-size: 2.5em;
+    font-family: 'Righteous', cursive;
+    padding: 0;
+
+}
+
+.footer-img{
+    width: 40px;
+    margin: 0 10px;
+}
+.btn-footer{
+    border-radius: 5px;
+    margin: 10px 0px;
+    background: #4267b2;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 5% 15%;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    float: right;
+    transition: 0.5s;
+}
+
+.btn-footer:hover{
+    background: #281e80f0;
+    box-shadow: 0 4px 8px 0 rgba(123, 124, 187, 0.2), 0 6px 20px 0 rgba(34, 33, 33, 0.726);
+    transition: 0.5s;
+}
+
+.item-footer2{
+    font-family: 'PT Sans', sans-serif;
+    text-decoration: none;
+    color: #141312d7;
+}
+
+.list-unstyled{
+    list-style: none;
+    padding-left: 7px;
+    margin-top: 0;
+    line-height: 25px;
+}
+
+/* FIN 4*/
