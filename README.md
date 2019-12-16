@@ -1,5 +1,5 @@
 # AgendAr - Proyecto ComIT -
-https://arieljans.github.io/Proyecto-ComIT/
+https://webserver-agendar.herokuapp.com/
 
 Funciones del proyecto:
 1_ Registrarse / Iniciar cesión 
